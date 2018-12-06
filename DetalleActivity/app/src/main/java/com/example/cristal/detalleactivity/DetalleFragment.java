@@ -32,13 +32,12 @@ public class DetalleFragment extends Fragment {
 
     public static DetalleFragment fabrica(MovieDB movieDB){
         DetalleFragment fragment = new DetalleFragment();
-        List<Cast> actor = new ArrayList<>();
+        ArrayList<Cast> actor = new ArrayList<>();
         MovieDB dato = movieDB;
 
         Bundle bundle = new Bundle();
 
         bundle.putSerializable(DetalleFragment.KEY_MOVIEDB, dato);
-        //TODO bundle.putParcelableArrayList(DetalleFragment.KEY_ACTOR, actor);
         fragment.setArguments(bundle);
 
         return fragment;
