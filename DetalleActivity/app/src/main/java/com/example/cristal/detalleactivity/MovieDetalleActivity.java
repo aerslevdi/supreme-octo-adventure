@@ -22,10 +22,6 @@ public class MovieDetalleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detalle);
 
-            setContentView(R.layout.activity_movie_detalle);
-            toolbar = findViewById(R.id.toolbar);
-            toolbar.setTitle(getResources().getString(R.string.app_name));
-            setSupportActionBar(toolbar);
 
         List<MovieDB> datos;
         MovieDBDAO daoMovies = new MovieDBDAO();

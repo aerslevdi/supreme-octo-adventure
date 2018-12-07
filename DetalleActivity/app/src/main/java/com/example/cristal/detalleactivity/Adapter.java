@@ -16,11 +16,9 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder>{
 
     private List<Cast> casts;
-    private AdapterListener adapterListener;
 
-    public Adapter(List<Cast> casts, AdapterListener adapterListener) {
+    public Adapter(List<Cast> casts) {
         this.casts = casts;
-        this.adapterListener = adapterListener;
     }
 
     @NonNull
@@ -47,26 +45,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder>{
 
     class AdapterViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imagen;
-        private TextView nombre;
 
-        public ActorViewHolder(final View itemView) {
+        private TextView nombreActor;
+        private ImageView imagenPerfil;
+
+        public AdapterViewHolder(final View itemView) {
             super(itemView);
-            nombre = itemView.findViewById(R.id.actorNombre);
-            imagen = itemView.findViewById(R.id.imageActor);
+            nombreActor = itemView.findViewById(R.id.actorNombre);
+            imagenPerfil = itemView.findViewById(R.id.imageActor);
 
 
         }
         public void cargar (Cast cast){
-            nombre.setText(cast.getName());
+            nombreActor.setText(cast.getName());
+            imagenPerfil.setImageResource(cast.getProfile_path());
+
             //TODO String path = cast.getProfile_path();
             //Glide.with(itemView.getContext()).load("http://image.tmdb.org/t/p/w185/"+path).into(imagen);
 
         }
-    }
-
-    public interface AdapterListener {
-        void recibir();
     }
 
 }

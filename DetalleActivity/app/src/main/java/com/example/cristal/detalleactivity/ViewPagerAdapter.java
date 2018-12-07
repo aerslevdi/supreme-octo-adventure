@@ -12,7 +12,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
     private List<Fragment> fragments = new ArrayList<>();
 
     private List <MovieDB> datos;
-    private DetalleMovie detalleMovie;
 
     public ViewPagerAdapter(FragmentManager fm,  List<MovieDB> datos) {
         super(fm);
